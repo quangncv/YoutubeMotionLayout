@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        motion:constraintSetEnd="@+id/end"
+        motion:constraintSetStart="@id/start"
+        motion:duration="200">
+       <KeyFrameSet>
+           <KeyPosition
+               motion:motionTarget="@+id/playerView"
+               motion:framePosition="90"
+               motion:keyPositionType="deltaRelative"
+               motion:curveFit="linear"
+               motion:percentWidth="0"
+               motion:percentX="0" />
+           <KeyAttribute
+               motion:motionTarget="@+id/imgPlayPause"
+               motion:framePosition="90"
+               android:alpha="0" />
+           <KeyAttribute
+               motion:motionTarget="@+id/tvTitleMini"
+               motion:framePosition="95"
+               android:alpha="0" />
+           <KeyAttribute
+               motion:motionTarget="@+id/seekBar"
+               motion:framePosition="95"
+               android:alpha="0" />
+       </KeyFrameSet>
+        <OnSwipe motion:touchAnchorId="@+id/playerLayout"
+            motion:touchAnchorSide="bottom"
+            motion:maxAcceleration="200"/>
+    </Transition>
+
+    <ConstraintSet android:id="@+id/start">
+        <Constraint
+            android:id="@+id/playerLayout"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintDimensionRatio="16:9"
+            motion:layout_constraintStart_toStartOf="parent" />
+        <Constraint
+            android:id="@+id/playerView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            motion:layout_constraintBottom_toBottomOf="@id/playerLayout"
+            motion:layout_constraintTop_toTopOf="@id/playerLayout"
+            motion:layout_constraintStart_toStartOf="@id/playerLayout"
+            motion:layout_constraintEnd_toEndOf="@id/playerLayout" />
+        <Constraint
+            android:id="@+id/rvPlaylist"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintTop_toBottomOf="@id/playerLayout"
+            android:alpha="1" />
+        <Constraint
+            android:id="@+id/imgPlayPause"
+            motion:layout_constraintEnd_toEndOf="@id/playerLayout"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            motion:layout_constraintBottom_toBottomOf="@id/playerLayout"
+            android:layout_marginEnd="20dp"
+            motion:layout_constraintTop_toTopOf="@id/playerLayout"
+            android:alpha="0"
+            android:visibility="invisible" />
+        <Constraint
+            android:id="@+id/tvTitleMini"
+            motion:layout_constraintEnd_toStartOf="@id/imgPlayPause"
+            motion:layout_constraintStart_toEndOf="@id/playerView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="10dp"
+            motion:layout_constraintBottom_toBottomOf="@id/playerLayout"
+            motion:layout_constraintTop_toTopOf="@id/playerLayout"
+            android:visibility="invisible"
+            android:alpha="0" />
+        <Constraint
+            android:id="@+id/seekBar"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            motion:layout_constraintBottom_toBottomOf="@id/playerLayout"
+            android:visibility="invisible"
+            android:alpha="0"/>
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+        <Constraint
+            android:id="@+id/rvPlaylist"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintTop_toBottomOf="@id/playerLayout"
+            motion:layout_constraintVertical_bias="1.0"
+            android:alpha="0" />
+        <Constraint
+            android:layout_height="60dp"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintBottom_toBottomOf="@+id/rvPlaylist"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="0dp"
+            android:id="@+id/playerLayout"
+            motion:layout_constraintVertical_bias="1.0" />
+        <Constraint
+            android:id="@+id/playerView"
+            android:layout_width="120dp"
+            android:layout_height="0dp"
+            motion:layout_constraintBottom_toBottomOf="@id/playerLayout"
+            motion:layout_constraintTop_toTopOf="@id/playerLayout"
+            motion:layout_constraintStart_toStartOf="@id/playerLayout" />
+        <Constraint
+            android:id="@+id/imgPlayPause"
+            motion:layout_constraintEnd_toEndOf="@id/playerLayout"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            motion:layout_constraintBottom_toBottomOf="@id/playerLayout"
+            android:layout_marginEnd="20dp"
+            motion:layout_constraintTop_toTopOf="@id/playerLayout"
+            android:alpha="1"
+            android:visibility="visible" />
+        <Constraint
+            android:id="@+id/tvTitleMini"
+            motion:layout_constraintEnd_toStartOf="@id/imgPlayPause"
+            motion:layout_constraintStart_toEndOf="@id/playerView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="10dp"
+            motion:layout_constraintBottom_toBottomOf="@id/playerLayout"
+            motion:layout_constraintTop_toTopOf="@id/playerLayout"
+            android:visibility="visible"
+            android:alpha="1" />
+        <Constraint
+            android:id="@+id/seekBar"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            motion:layout_constraintBottom_toBottomOf="@id/playerLayout"
+            android:visibility="visible"
+            android:alpha="1"/>
+    </ConstraintSet>
+</MotionScene>
