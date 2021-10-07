@@ -14,7 +14,6 @@ import com.example.youtubemotionlayout.data.remote.response.Item
 import com.example.youtubemotionlayout.databinding.FragmentVideoPlayerBinding
 import com.example.youtubemotionlayout.ui.main.MainActivity
 import com.example.youtubemotionlayout.utils.DatetimeUtils
-import com.google.android.exoplayer2.SimpleExoPlayer
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.PlayerConstants
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.YouTubePlayer
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.AbstractYouTubePlayerListener
