@@ -59,7 +59,6 @@ class VideoPlayerFragment: Fragment() {
                 } else {
                     viewBinding.playerView.getPlayerUiController().showUi(false)
                 }
-                Log.e("complete", "${viewBinding.rootLayout.progress}")
             }
         })
 
